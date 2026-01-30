@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-serif: var(--font-serif);
+
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  
+  --color-primary: #ffffff;
+  --color-secondary: #a3a3a3;
+  --color-accent: #525252;
+  
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-card-border: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300;
+  }
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .text-gradient {
+    /* Kept for structure but made monochrome */
+    color: white;
+  }
+  
+  .text-gradient-alt {
+    /* Kept for structure but made monochrome */
+    color: #d4d4d4;
+  }
+}
